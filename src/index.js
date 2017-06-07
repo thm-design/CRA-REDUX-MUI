@@ -1,23 +1,23 @@
 import './index.css';
+import './toolbox/theme.css';
 
 import App from './App';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Provider} from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Store from './store';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
 import registerServiceWorker from './registerServiceWorker';
+import theme from './toolbox/theme.js';
 
 const StoreInstance = Store();
 
 const MaterialUiWrappedApp = () =>
     <Provider store={StoreInstance}>
-        <MuiThemeProvider>
+        <ThemeProvider theme={theme}>
             <App />
-        </MuiThemeProvider>
+        </ThemeProvider>
     </Provider>;
 
 ReactDOM.render(<MaterialUiWrappedApp />, document.getElementById('root'));
 registerServiceWorker();
-injectTapEventPlugin();
