@@ -1,4 +1,10 @@
-// import cart from './cart';
 import {combineReducers} from 'redux';
-const rootReducer = combineReducers({});
+import {responsiveDrawer} from 'material-ui-responsive-drawer';
+import {responsiveStateReducer} from 'redux-responsive';
+
+const rootReducer = combineReducers({
+    browser: responsiveStateReducer,
+    responsiveDrawer: responsiveDrawer
+});
+
 export default rootReducer;

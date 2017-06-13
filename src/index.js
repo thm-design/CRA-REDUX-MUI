@@ -9,10 +9,10 @@ import registerServiceWorker from './registerServiceWorker';
 
 const StoreInstance = Store();
 
-const MaterialUiWrappedApp = () =>
+const ReduxWrappedApp = () =>
     <Provider store={StoreInstance}>
         <App />
     </Provider>;
 
-ReactDOM.render(<MaterialUiWrappedApp />, document.getElementById('root'));
+ReactDOM.render(<ReduxWrappedApp />, document.getElementById('root'));
 registerServiceWorker();
